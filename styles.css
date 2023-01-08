@@ -1,0 +1,56 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);  
+    /* ^^scale 0 makes modal 100 percent of the size  */
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 10;
+    /* ^^puts your modal above the page */
+    background-color: white;
+    width: 200px;
+    max-width: 80%;
+    height: auto;
+    padding: 1%;
+}
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
+    /* ^^scale 1 makes modal 100 percent of the size  */
+}
+.modal-header{
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 7%;
+}
+.modal-header .closeBtn{
+cursor: pointer;
+border: none;
+background-color: white;
+}
+input{
+    width: 80%;
+    margin-bottom: 7%;
+}
+#overlay{
+    position: fixed;
+    opacity: 0; 
+    transition: 200ms ease-in-out;   
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-color: rgba(0 ,0 , 0, .5);
+    pointer-events: none;
+    /* makes it so you can't hit the new book button
+    while the overlay is up */
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+    /* allows you to it exit button in overlay */
+}
