@@ -20,8 +20,8 @@ function Book(author, title, pages, isRead) {
     }
     return book;
   }
-  addBookToLibrary("Roger Steinbeck", "Of Mice and Men", "72",true)
-  addBookToLibrary("Mark Twain", "Huckleberry Fin", "366", "no")
+  addBookToLibrary("Roger Steinbeck", "Of Mice and Men", "72", true)
+  addBookToLibrary("Mark Twain", "Huckleberry Fin", "366", true)
   function addBookToLibrary(author, title, pages, isRead) {
   myLibrary.push(Book(author, title, pages, isRead))   
 }
@@ -48,9 +48,25 @@ formData.addEventListener("submit", (e) => {
     let author = document.getElementById("author")
     let title = document.getElementById("title")
     let numOfPgs = document.getElementById("numOfPgs")
-    let readStatus = document.getElementById("readStatus")
-    
-    addBookToLibrary(author.value, title.value, numOfPgs.value, readStatus.value)
+    let readStatusArray = document.getElementsByName("readStatus")
+    let readStatus = false
+
+    readStatusArray.forEach(function(checkBox, index){
+        if(readStatusArray[index].checked){
+            console.log(readStatusArray[index].value)
+            if(readStatusArray[index].value === "Yes"){
+                readStatus = true
+            }
+        }
+    })
+
+    // for(let i = 0; i < readStatusArray.length; i++) {
+    //     if(readStatusArray[i].checked){
+    //         
+    // }
+    // }
+    //^^how you do the foreach loop with a for loop
+    addBookToLibrary(author.value, title.value, numOfPgs.value, readStatus)
     refreshList()
 })
 
