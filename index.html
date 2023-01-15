@@ -16,21 +16,21 @@
 <div class="modal" id="modal">
     <div class="modal-header">
         <div class="title">New Book</div>
-        <button id="closeBtn">&times;</button>
+        <button id="closeBtn" class="">&times;</button>
     </div>
     <div class="modal-body">
-        <form>
-            <label for="author">Author:</label><br>
-            <input type="text"><br>
+        <form id="myForm" class form method="post">
+            <label for="author" >Author:</label><br>
+            <input type="text" id="author" value="Michael Criton" required><br>
 
             <label for="title">Title:</label><br>
-            <input type="text">
+            <input type="text" id="title" value="Jurassic Park" required>
 
             <label for="numOfPgs">Number Of Pages:</label><br>
-            <input type="text"><br>
+            <input type="text" id="numOfPgs" value="448" required><br>
 
             <label for="readStatus">Have you read this?</label><br>
-            <input type="text"><br>
+            <input type="text" id="readStatus" value="Yes" required><br>
                 
             <button type="submit">Submit</button>
         </form>
