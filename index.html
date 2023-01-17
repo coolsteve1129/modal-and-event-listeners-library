@@ -7,15 +7,14 @@
     <title>Library</title>
     <link href="styles.css" rel="stylesheet">
 </head>
+<div id="edge">
 <body>
     <div id="bookList"></div>
 
-
 <button id="newBookBtn">New Book!</button>
-
 <div class="modal" id="modal">
     <div class="modal-header">
-        <div class="title">New Book</div>
+        <div id="newBookText" width:>New Book</div>
         <button id="closeBtn" class="">&times;</button>
     </div>
     <div class="modal-body">
@@ -24,7 +23,7 @@
             <input type="text" id="author" minlength="1" value="Michael Criton" required><br>
 
             <label for="title">Title:</label><br>
-            <input type="text" id="title" minlength="1" value="Jurassic Park" required>
+            <input type="text" id="title" minlength="1" value="Jurassic Park" required><br>
 
             <label for="numOfPgs">Number Of Pages:</label><br>
             <input type="text" id="numOfPgs" min="1" value="448" required><br>
@@ -46,3 +45,4 @@
     <script src="books.js"></script>
 </body>
 </html>
+</div>

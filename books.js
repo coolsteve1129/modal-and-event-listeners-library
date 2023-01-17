@@ -66,6 +66,7 @@ formData.addEventListener("submit", (e) => {
     // }
     // }
     //^^how you do the foreach loop with a for loop
+    
     addBookToLibrary(author.value, title.value, numOfPgs.value, readStatus)
     refreshList()
 })
